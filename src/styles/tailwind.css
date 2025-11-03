@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors - New Green Theme */
+    --color-background: #F8FAF8; /* main page background */
+    --color-foreground: #1B4332; /* dark green-gray text */
+    --color-border: #A5D6A7; /* light green border */
+    --color-input: #FFFFFF; /* pure white */
+    --color-ring: #2E7D32; /* primary green ring */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* pure white */
+    --color-card-foreground: #1B4332; /* dark green-gray */
+    --color-popover: #FFFFFF; /* pure white */
+    --color-popover-foreground: #1B4332; /* dark green-gray */
+    
+    /* Muted Colors */
+    --color-muted: #E8F5E9; /* very light green */
+    --color-muted-foreground: #4F5D57; /* secondary text */
+    
+    /* Primary Colors */
+    --color-primary: #2E7D32; /* primary green */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #A5D6A7; /* light green */
+    --color-secondary-foreground: #1B4332; /* dark text */
+    
+    /* Accent Colors */
+    --color-accent: #FFD54F; /* yellow accent for alerts */
+    --color-accent-foreground: #1B4332; /* dark text */
+    
+    /* State Colors */
+    --color-success: #2E7D32; /* primary green */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    --color-warning: #FFB74D; /* orange for warnings */
+    --color-warning-foreground: #1B4332; /* dark text */
+    
+    --color-error: #D32F2F; /* red for errors */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #D32F2F; /* red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Border Radius */
+    --radius: 1rem; /* 16px for softer cards */
+  }
+  
+  .dark {
+    /* Core Colors - Dark Mode */
+    --color-background: #1B4332; /* dark green background */
+    --color-foreground: #E8F5E9; /* light green text */
+    --color-border: #2E7D32; /* primary green border */
+    --color-input: #2E7D32; /* dark green input */
+    --color-ring: #A5D6A7; /* light green ring */
+    
+    /* Card Colors - Dark Mode */
+    --color-card: #2E7D32; /* dark green card */
+    --color-card-foreground: #E8F5E9; /* light text */
+    --color-popover: #2E7D32; /* dark green popover */
+    --color-popover-foreground: #E8F5E9; /* light text */
+    
+    /* Muted Colors - Dark Mode */
+    --color-muted: #1B4332; /* darker green muted */
+    --color-muted-foreground: #C8E6C9; /* light green muted text */
+    
+    /* Primary Colors - Dark Mode */
+    --color-primary: #A5D6A7; /* lighter green for dark mode */
+    --color-primary-foreground: #1B4332; /* dark text */
+    
+    /* Secondary Colors - Dark Mode */
+    --color-secondary: #2E7D32; /* primary green */
+    --color-secondary-foreground: #E8F5E9; /* light text */
+    
+    /* Accent Colors - Dark Mode */
+    --color-accent: #FFD54F; /* yellow accent */
+    --color-accent-foreground: #1B4332; /* dark text */
+    
+    /* State Colors - Dark Mode */
+    --color-success: #A5D6A7; /* light green */
+    --color-success-foreground: #1B4332; /* dark text */
+    
+    --color-warning: #FFB74D; /* orange */
+    --color-warning-foreground: #1B4332; /* dark text */
+    
+    --color-error: #EF5350; /* bright red */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #EF5350; /* bright red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--color-foreground);
+  }
+  
+  /* High contrast for outdoor visibility */
+  .high-contrast {
+    filter: contrast(1.2);
+  }
+  
+  /* Large touch targets for mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Soft card shadow */
+  .card-shadow {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Elevated card shadow */
+  .card-shadow-elevated {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Hover glow effect */
+  .hover-glow {
+    transition: all 300ms ease-in-out;
+  }
+  
+  .hover-glow:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(46, 125, 50, 0.15);
+  }
+  
+  /* Green gradient background */
+  .bg-green-gradient {
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  }
+  
+  /* Navbar gradient - Purple like AquaFlow */
+  .bg-navbar-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  /* Button gradient */
+  .bg-button-gradient {
+    background: linear-gradient(135deg, #2E7D32, #388E3C);
+  }
+  
+  /* Card hover effect like AquaFlow */
+  .card-hover-lift {
+    transition: all 0.3s ease;
+  }
+  
+  .card-hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Weather icon float animation */
+  .weather-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Pulse dot animation */
+  .pulse-dot {
+    animation: pulse-dot 2s infinite;
+  }
+  
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  /* Slide in animation */
+  .slide-in-animation {
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Smooth transitions */
+  .smooth-transition {
+    transition: all 300ms ease-in-out;
+  }
+  
+  /* Animation timing for agricultural context */
+  .ag-transition {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-duration: 250ms;
+  }
+}
